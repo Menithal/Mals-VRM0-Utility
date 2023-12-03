@@ -5,7 +5,12 @@ Standards mean everything, and avatar creators should be able to just make stuff
 
 Originates as from a personal plugin that the author has been using over the years to streamline the creation of custom avatars for VTubing with [VSeeFace](https://www.vseeface.icu/) and other VRM0 compatible software such as [VirtualMotionCapture](https://akira.works/VirtualMotionCapture-en/download.html), [LIV](https://www.liv.tv/), [VNyan](https://suvidriel.itch.io/vnyan), [VTuberPlus](https://arzolath.itch.io/vtuber-plus), [Meeps](https://meepskitten.itch.io/meep), and so forth.
 
-These tools are specifically built by an Avatar Creator for Avatar Creators. But it everyone can use it just as well, its Free! But as  with anything free, use at your own risk. If you find something that could use fixing, feel free to submit a Merge Request or Report it :)
+These tools are specifically built by an Avatar Creator for Avatar Creators. But it everyone can use it just as well, its Free! But as  with anything free, use at your own risk.
+
+If you find something that could use fixing, feel free to submit a Merge Request or Report it :)
+
+
+## Please Backup your work, or use this only on NEW avatars you are working on.
 
 
 # What is this?
@@ -60,8 +65,6 @@ The menu provides the following options to choose from
 
 Autobind contains various "Magic" tools. These will only work if certain naming conventions are used (as its the only way to reliably bind them) but it will try to match them to a "best guess" based with lower case sensitivity.
 
-#### Note these do NOT override existing BlendshapeClips that have defined Blendshapes in them, only ones that have not been bind. You will have to delete previously made BlendshapeClips if you want the tools to handle them.
-
 - `Existing Blendshapes` - Looks through all the mesh in the selected VRM model, and looks through every single available blendshapes, and makes them into clips.
   - `Filtered` - Selects only Valid VRM, VseeFace, ARKit, HTC Facetracking blendshapes
   - `Unfiltered` - Selects -everything- but decorative Blendshapes. (like `====== Viseme ======` or variants using other symbols)
@@ -69,6 +72,18 @@ Autobind contains various "Magic" tools. These will only work if certain naming 
 - `Arkit+VSFe` - Binds all blendshapes that match [VSF Extended](https://www.vseeface.icu/#special-blendshapes), AND [Apple's ARKit Standard](https://developer.apple.com/documentation/arkit/arfaceanchor/blendshapelocation).
 - `HTC+VSFe` - Binds all blendshapes that match [VSF Extended](https://www.vseeface.icu/#special-blendshapes), AND [HTC Blendshape Standard](https://developer.vive.com/resources/openxr/openxr-pcvr/tutorials/unity/integrate-facial-tracking-your-avatar/).
 - `Meta+VSFe` - Binds all blendshapes that match [VSF Extended](https://www.vseeface.icu/#special-blendshapes), AND [Meta Blendshape Standard](https://developer.oculus.com/documentation/unreal/move-ref-blendshapes/)
+
+
+# How  Does this binding work?
+
+Both Blendshapes and Springbones are defined by Naming conventions
+
+As long as the blendshapes follow any of the above standards (or even **VRC ones that are mapped directly to the VSF Extended**), it will be included in the binding.
+
+Spring Bones use a bit more of a unique convention defined for this plugin. They must use `_phys`, `_phys_#`, or `_phys#` naming convention inorder to be bound to the bones. SpringBoneColliderGroups are then automatically bound to these SpringBone definitions if they have not yet been defined.
+
+Note this should **NOT override existing BlendshapeClips that have defined Blendshapes in them**, only ones that have not been bind. You will have to delete previously made BlendshapeClips if you want the tools to handle them. spring bones work in similar method, so if you have -any- customization done to a blendshapeClip, that clip is ignored.
+
 
 ## What does `Blendshape` Option do?
 
@@ -90,7 +105,7 @@ Additional Options Include
 Check that blender is exporting the blendshapes. In Unity, you can check this by selecting the mesh, and checking the blendshapes are presentt. FBX Export tends to merge modifiers, and blender doesnt like modifiers being merged with Blendshapes.
 
 If not, double check your modifiers. If you have modifiers, check tools like [przemir's ApplyModifiersForObjectWithShapekeys](https://github.com/przemir/ApplyModifierForObjectWithShapeKeys/) to merge them while keeping your Blendshapes consistant.
-
+ 
 ### My Blendshapes are looking wierd D:
 
 Blender FBX Export normals can go a bit wonky, especially on older versions. When importing the model to unity, make sure `Legacy Blendshape Normals` is enabled in the model `Import` settings.
@@ -113,6 +128,6 @@ If you think my stuff is neat, feel free to check my other work at my [ko-fi at 
 
 # Change Log
 
-### Version 0.5
+### Version 0.1
 
 Initial Public Release.
