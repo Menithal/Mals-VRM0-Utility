@@ -1,0 +1,18 @@
+{
+  "name": "com.malactus.vrm",
+  "version": "0.1.0",
+  "displayName": "MalAv VRM Utility",
+  "description": "Utility tool for creating avatars for VRM/VSF",
+  "unity": "2019.4",
+  "keywords": [
+    "vrm"
+  ],
+  "author": {
+    "name": "Malactus / Menithal"
+  },
+  "dependencies": {
+    "com.vrmc.univrm": "0.99.0"
+  },
+  "samples": [
+  ]
+}
