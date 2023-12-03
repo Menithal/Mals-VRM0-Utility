@@ -1,6 +1,6 @@
 {
   "name": "com.malactus.vrm",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "displayName": "MalAv VRM Utility",
   "description": "Utility tool for creating avatars for VRM/VSF",
   "unity": "2019.4",

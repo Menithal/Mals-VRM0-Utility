@@ -41,7 +41,7 @@ namespace Malactus.VrmTools.Editor
         {
             foreach (var component in components)
             {
-                Object.Destroy(component);
+                Object.DestroyImmediate(component);
             }
         }
         public static void DeleteVrmBlendShapeClip(VRMBlendShapeProxy proxy, BlendShapeClip clip)
