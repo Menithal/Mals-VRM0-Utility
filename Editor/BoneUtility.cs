@@ -14,6 +14,7 @@
    limitations under the License.
  */
 #if UNITY_EDITOR && UNITY_2019
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -39,7 +40,7 @@ namespace Malactus.VrmTools.Editor
             if (vrmSpringBones.Length == 0)
             {
                 throw new MalToolException(
-                    "Could not find any springbones set, is the VRM Model Selected in Scene? If so, add single springbone to establish spring bone configuration gameObject.");
+                    "Could not find any springbones set, is the VRM Model Selected in Scene? If so, add single springbone to a child gameobject to establish where you want spring bones to go to.");
             }
 
             bindings.SpringBoneRoot = vrmSpringBones[0].gameObject;
@@ -239,7 +240,9 @@ namespace Malactus.VrmTools.Editor
             {
                 if (springBone.ColliderGroups.Length == 0)
                 {
-                    springBone.ColliderGroups = colliderGroups;
+                    VRMSpringBoneColliderGroup[] groups = new VRMSpringBoneColliderGroup[colliderGroups.Length];
+                    Array.Copy( colliderGroups,groups, colliderGroups.Length);
+                    springBone.ColliderGroups = groups;
                 }
             }
 

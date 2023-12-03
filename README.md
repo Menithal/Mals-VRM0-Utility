@@ -12,9 +12,7 @@ These tools are specifically built by an Avatar Creator for Avatar Creators. But
 
 If you find something that could use fixing, feel free to submit a Merge Request or Report it :)
 
-
 ## Please Backup your work before using this, or use this only on NEW avatars for your pipeline 
-
 
 # What is this?
 
@@ -35,6 +33,7 @@ This Tool allows you to quickly bind the following attributes to a VRM0 Avatar.
 - Assign SpringBone Colliders Automatically
   - Humanoid defined Head, Hands, and the Index finger Distal
   - Above but Every Single Finger + Chest
+- Bones named `FPV`/`FirstPersonOffset`/`FirstPersonBone` will be bound as the location of the FirstPersonOffset.
 
 # Dependencies
 
@@ -58,7 +57,7 @@ The plugin adds new Navigation Option on Unity's Top Bar. `MalAv VRM Utility`
 
 The menu provides the following options to choose from
 
-- `AutoBind` - Collection of tools to -automatically- Bind majority of our avatars VRM components. This is probably which will be your new best friend
+- `AutoBind` - Collection of tools to -automatically- Bind majority of our avatars VRM components.  This is probably which will be your new best friend
 - `Blendshapes` - Collection of tools that deal with Blendshapes, BlendshapeClips.
 - `SpringBones` - Collection of tools that deal with SpringBones and SpringBone Colliders (Dynamic/Wiggly things)
 
@@ -68,13 +67,15 @@ The menu provides the following options to choose from
 
 Both Blendshapes and Springbones are defined by __Naming convention__
 
-As long as the blendshapes follow any of the above standards (or even **VRC ones that are mapped directly to the VSF Extended**), it will be included in the binding.
+As long as the blendshapes follow any of the above standards (or even **VRC ones that are mapped directly to the VSF Extended**), it will be included in the binding. Note that the binding is **case insensative**
 
 Spring Bones use a bit more of a unique convention defined for this plugin. They must use `_phys`, `_phys_#`, or `_phys#` naming convention inorder to be bound to the bones. *You only have to define this on the Root bones* you want in the group.
 
 SpringBoneColliderGroups are then automatically bound to these SpringBone definitions if they have not yet been defined.
 
 Spring Bone colliders use the Unity Humanoid as reference to define the position of the default Colliders. If these already exist on those bones, no groups will be overriden.
+
+Similarly, Bones named `FPV`/`FirstPersonOffset` or `FirstPersonBone` will be bound as the location of the FirstPersonOffset.
 
 Note this should **NOT override existing BlendshapeClips that have defined Blendshapes in them**, only ones that have not been bind. You will have to delete previously made BlendshapeClips if you want the tools to handle them. spring bones work in similar method, so if you have -any- customization done to a blendshapeClip, that clip is ignored.
 
