@@ -14,6 +14,8 @@ If you find something that could use fixing, feel free to submit a Merge Request
 
 ## Please Backup your work before using this, or use this only on NEW avatars for your pipeline 
 
+[Here is a youtube video on what this plugin does](https://www.youtube.com/watch?v=yuX6WckNemo)
+
 # What is this?
 
 This Tool allows you to quickly bind the following attributes to a VRM0 Avatar.
@@ -84,11 +86,7 @@ Note this should **NOT override existing BlendshapeClips that have defined Blend
 
 See [Releases](https://github.com/Menithal/Mals-VRM0-Utility/releases).
 
-
-
 # How To use
-
-Video will be provided later.
 
 1. Import the Avatar first into Unity
 2. Convert the Avatar Rig to Unity Humanoid
