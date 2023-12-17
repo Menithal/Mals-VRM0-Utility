@@ -1,5 +1,7 @@
 # MalAv VRM0 Utility
 
+If you are looking for the Blender Version, You can find it at [Menithal/Mals-Blender-VRM0-Utility](https://github.com/Menithal/Mals-Blender-VRM0-Utility)
+
 This is an utility plugin for the use with **UniVRM 0.89 - 0.99** specifically built to make the pipeline in making VRM0.x format avatars way, WAY less time consuming to create.
 
 Standards mean everything, and avatar creators should be able to just make stuff with naming conventions.
